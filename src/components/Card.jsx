@@ -21,11 +21,7 @@ const Card = (props) => {
         <>
             <article 
                 className={styles.card}
-                style={{
-                    // backgroundColor: {randomColor},
-                    // backgroundColor: 'lightBlue',
-                    backgroundColor: `#${randomColor}`
-                }}>
+                style={{backgroundColor: `#${randomColor}`}}>
                 <div className={styles.canTop}></div>
                 <div className={styles.canMiddle}> 
                     <h2>{beer}</h2>
