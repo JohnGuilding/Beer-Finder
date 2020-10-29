@@ -6,7 +6,7 @@ import Card from "./Card";
 
 const Dashboard = (props) => {
 
-    const { searchBeers, randomBeer } = props;
+    const { pageLoadBeers, searchBeers, randomBeer } = props;
 
     // passing beer to card
     const getBeer = (beer) => (
@@ -18,6 +18,7 @@ const Dashboard = (props) => {
     return (
         <>
             <section className={styles.dashboard}>
+                {pageLoadBeers.map(getBeer)}
                 {searchBeers.map(getBeer)}
                 {randomBeer.map(getBeer)}
             </section>

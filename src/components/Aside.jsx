@@ -12,7 +12,6 @@ const Aside = (props) => {
         <section className={styles.aside}>
             <SearchBar updateSearchText={updateSearchText}/>
             <button onClick={setRandomBeer} className={styles.btn}>Random Beer</button>
-            {/* <div>{beers}</div> */}
         </section>
     )
 }

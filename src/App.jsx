@@ -9,14 +9,30 @@ function App() {
 
   // SEARCH FOR BEERS //
   const [searchBeers, setSearchBeers] = useState([])
+  const [pageLoadBeers, setPageLoadBeers] = useState([])
   const [user, setUser] = useState(null)
 
 
-  // const grabBeers = () => {
-  //   fetch (`https://api.punkapi.com/v2/beers`)
-  //       .then((res) => res.json())
-  //       .then((res) => setSearchBeers(res))
-  //   }
+  const homePageBeers = () => {
+    fetch (`https://api.punkapi.com/v2/beers`)
+        .then((res) => res.json())
+        .then((res) => {
+          const response = res.map(item => item.name)
+          setPageLoadBeers(response);
+      });
+    }
+
+    // const homePageBeers = () => {
+    //   fetch (`https://api.punkapi.com/v2/beers`)
+    //       .then((res) => res.json())
+    //       .then((res) => setPageLoadBeers(res))
+    //   }
+
+    // use it to pass beers on load????
+    useEffect(() => {
+      homePageBeers();
+    }, []);
+
 
   const grabBeers = (searchTerm) => {
       fetch (`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
@@ -44,11 +60,6 @@ function App() {
               console.log(res);
           });
       }
-
-      // use it to pass beers on load????
-      // useEffect(() => {
-      //   grabBeers();
-      // }, []);
 
       const signIn = () => {
         firebase.auth().signInWithRedirect(provider);
@@ -87,6 +98,7 @@ function App() {
         setRandomBeer={getRandomBeer} 
         />
         <Dashboard 
+        pageLoadBeers={pageLoadBeers}
         searchBeers={searchBeers} 
         randomBeer={randomBeer}
         />
