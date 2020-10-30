@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles/App.module.scss';
 import Header from "./components/Header";
 import Aside from "./components/Aside";
-import Dashboard from "./components/Dashboard";
+import Routes from "./components/Routes";
 import firebase, { provider } from './firebase';
 
 function App() {
 
   // SEARCH FOR BEERS //
   const [searchBeers, setSearchBeers] = useState([])
-  const [pageLoadBeers, setPageLoadBeers] = useState([])
+  // const [pageLoadBeers, setPageLoadBeers] = useState([])
   const [user, setUser] = useState(null)
 
 
-  const homePageBeers = () => {
-    fetch (`https://api.punkapi.com/v2/beers`)
-        .then((res) => res.json())
-        .then((res) => {
-          const response = res.map(item => item.name)
-          setPageLoadBeers(response);
-      });
-    }
+  // const homePageBeers = () => {
+  //   fetch (`https://api.punkapi.com/v2/beers`)
+  //       .then((res) => res.json())
+  //       .then((res) => {
+  //         const response = res.map(item => item.name)
+  //         setPageLoadBeers(response);
+  //     });
+  //   }
 
     // const homePageBeers = () => {
     //   fetch (`https://api.punkapi.com/v2/beers`)
@@ -29,9 +29,9 @@ function App() {
     //   }
 
     // use it to pass beers on load????
-    useEffect(() => {
-      homePageBeers();
-    }, []);
+    // useEffect(() => {
+    //   homePageBeers();
+    // }, []);
 
 
   const grabBeers = (searchTerm) => {
@@ -87,18 +87,19 @@ function App() {
 
   return (
     <main>
-      <Header 
-      user={user}
-      signIn={signIn}
-      signOut={signOut}
-      />
+        <Header
+        user={user}
+        signIn={signIn}
+        signOut={signOut}
+        />
       <section>
         <Aside 
         updateSearchText={grabBeers} 
-        setRandomBeer={getRandomBeer} 
         />
-        <Dashboard 
-        pageLoadBeers={pageLoadBeers}
+        <Routes 
+        user={user} 
+        setRandomBeer={getRandomBeer} 
+        // pageLoadBeers={pageLoadBeers}
         searchBeers={searchBeers} 
         randomBeer={randomBeer}
         />

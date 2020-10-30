@@ -5,13 +5,12 @@ import SearchBar from "./SearchBar";
 
 const Aside = (props) => {
 
-    const { updateSearchText, setRandomBeer } = props
+    const { updateSearchText } = props
     console.log(updateSearchText);
 
     return (
         <section className={styles.aside}>
             <SearchBar updateSearchText={updateSearchText}/>
-            <button onClick={setRandomBeer} className={styles.btn}>Random Beer</button>
         </section>
     )
 }
