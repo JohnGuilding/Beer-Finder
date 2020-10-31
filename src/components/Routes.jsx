@@ -8,17 +8,16 @@ import Dashboard from "./Dashboard/Dashboard";
 
 const Routes = (props) => {
 
-    const { user, pageLoadBeers, searchBeers, randomBeer, setRandonBeer } = props;
+    const { user, beers } = props;
 
     return (
         <Router className={styles.router}>
             <PrivateRoutes path="/" user={user}>
-                <Suprise path='/suprise' setRandonBeer={setRandonBeer} randomBeer={randomBeer}/>
+                <Suprise path='/suprise' />
             </PrivateRoutes>
             <Dashboard 
             path="/" 
-            pageLoadBeers={pageLoadBeers}
-            searchBeers={searchBeers} 
+            beers={beers}
             />
         </Router>
     )

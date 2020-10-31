@@ -2,9 +2,17 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    // grid-template-rows: repeat(10, 1fr);
     justify-items: center;
-    align-items: center;
-    align-content: center;
-    background-color: red;
+    // align-items: center;
+    align-content: space-around;
+    // background-color: red;
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(10, 1fr);
+    }
 }

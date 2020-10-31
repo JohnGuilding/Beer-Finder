@@ -5,22 +5,13 @@ import Card from "./Card/Card";
 
 
 
-const Suprise = (props) => {
-    const {setRandomBeer, randomBeer} = props;
-
-     // passing beer to card
-    const getBeer = (beer) => (
-        <div key={beer.id}>
-            <Card beer={beer}/>
-        </div>
-    )
+const Suprise = () => {
 
     return (
         <div>
-            <button onClick={setRandomBeer} className={styles.btn}>Random Beer</button>
+            <button className={styles.btn}>Random Beer</button>
             This is a suprise
             <section className={styles.dashboard}>
-                {randomBeer.map(getBeer)}
             </section>
         </div>
     )
