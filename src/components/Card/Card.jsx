@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styles from "./Card.module.scss";
 
 const Card = (props) => {
@@ -14,7 +14,7 @@ const Card = (props) => {
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
     console.log(randomColor);
 
-    const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 100) + "...";
+    const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
 
     return (
         <>
@@ -44,8 +44,7 @@ const Card = (props) => {
     )
 }
 
-export default Card
-
+export default Card;
 
 {/* <article 
     className={styles.card}
