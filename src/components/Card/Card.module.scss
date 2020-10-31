@@ -1,0 +1,40 @@
+.card {
+    width: 250px;
+    height: 350px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 50px;
+    // background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+.canTop {
+border-bottom: 30px solid grey;
+border-left: 25px solid transparent;
+border-right: 25px solid transparent;
+height: 0;
+width: 242px;
+}
+
+.canBottom {
+border-top: 30px solid grey;
+border-left: 25px solid transparent;
+border-right: 25px solid transparent;
+height: 0;
+width: 242px;
+}
+
+
+h2 {
+    font-size: 30px;
+    // width: 95%;
+    text-align: center;
+    background-color: none;
+}
+
+}

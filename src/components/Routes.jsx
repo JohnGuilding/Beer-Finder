@@ -3,7 +3,7 @@ import { Router } from "@reach/router";
 import styles from "./../styles/App.module.scss"
 import PrivateRoutes from "./PrivateRoutes";
 import Suprise from "./Suprise";
-import Dashboard from "./Dashboard";
+import Dashboard from "./Dashboard/Dashboard";
 
 
 const Routes = (props) => {

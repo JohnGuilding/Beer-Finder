@@ -1,12 +1,13 @@
-import React from 'react'
-import styles from "./../styles/App.module.scss";
-import Styles from "./../styles/Card.module.scss"; 
-import Card from "./Card";
+import React from "react";
+import styles from "./Dashboard.module.scss";
+import Card from "./../Card"
+// import styles from "./../styles/App.module.scss";
+// import Styles from "./../styles/Card.module.scss"; 
 
 
 const Dashboard = (props) => {
 
-    const { pageLoadBeers, searchBeers, randomBeer } = props;
+    const { searchBeers } = props;
 
     // passing beer to card
     const getBeer = (beer) => (
@@ -18,9 +19,7 @@ const Dashboard = (props) => {
     return (
         <>
             <section className={styles.dashboard}>
-                {/* {pageLoadBeers.map(getBeer)} */}
                 {searchBeers.map(getBeer)}
-                {randomBeer.map(getBeer)}
             </section>
         </>
     )

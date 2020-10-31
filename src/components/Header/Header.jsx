@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from "./../styles/App.module.scss";
+import React from "react";
+import styles from "./Header.module.scss";
 import { Link } from '@reach/router';
 
 const Header = (props) => {
@@ -27,4 +27,4 @@ const ShowUserName = user ? user.displayName : 'guest';
     )
 }
 
-export default Header
+export default Header;

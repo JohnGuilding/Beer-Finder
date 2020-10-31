@@ -3,33 +3,11 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: azure;
+  background-color: white;
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.header {
-  width: 100%;
-  height: 15vh;
-  background-color: coral;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.aside {
-  width: 250px;
-  height: 85vh;
-  background-color: coral;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,12 +15,10 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+.router {
+  width: 100%;
 }
 
 .btn {
@@ -50,21 +26,5 @@ main {
   width: 70px;
   background-color: coral;
   cursor: pointer;
-}
-
-.dashboard {
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[10];
-      grid-template-rows: repeat(10, 1fr);
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 /*# sourceMappingURL=App.module.css.map */
