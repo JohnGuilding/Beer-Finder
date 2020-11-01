@@ -1,30 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* here */
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-}
-
 .container {
   width: 450px;
-  height: 550px;
+  height: 650px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,6 +53,7 @@ body {
   z-index: 2;
   -webkit-transition: all 0.75s ease-out;
   transition: all 0.75s ease-out;
+  background-color: transparent;
 }
 
 .circle {
@@ -182,5 +159,53 @@ body {
   border-right: 15px solid transparent;
   height: 0;
   width: 85px;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .container {
+    width: 300px;
+    height: 450px;
+  }
+  .card {
+    width: 250px;
+    height: 400px;
+  }
+  .beerImg {
+    width: 140px;
+    height: 150px;
+  }
+  .beerImg img {
+    height: 70px;
+  }
+  .circle {
+    width: 120px;
+    height: 120px;
+  }
+  .info {
+    width: 200px;
+    height: 250px;
+  }
+  .info h2 {
+    font-size: 20px;
+  }
+  .info h3 {
+    font-size: 10px;
+    padding: 5px 0;
+  }
+  p {
+    font-size: 10px;
+  }
+  .moreInfo {
+    margin-top: 5px;
+  }
+  .moreInfo button {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=Card.module.css.map */

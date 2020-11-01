@@ -4,7 +4,7 @@ import styles from "./Search.module.scss";
 const Search = (props) => {
 
   const { updateSearchText } = props;
-  console.log(updateSearchText);
+  // console.log(updateSearchText);
 
 
   return (

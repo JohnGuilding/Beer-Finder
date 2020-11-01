@@ -11,8 +11,16 @@ const Card = (props) => {
         abv,
     } = props.beer;
 
+    // const { 
+    //     name,
+    //     tagline,
+    //     description,
+    //     image_url,
+    //     abv,
+    // } = props.searchBeer;
+
+
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    console.log(randomColor);
 
     const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
 

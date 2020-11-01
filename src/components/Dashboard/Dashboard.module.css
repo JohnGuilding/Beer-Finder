@@ -1,5 +1,6 @@
 .dashboard {
-  width: 100%;
+  width: 85%;
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -9,10 +10,23 @@
       align-content: space-around;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1630px) {
+  .dashboard {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
   .dashboard {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .dashboard {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
   }
 }
 /*# sourceMappingURL=Dashboard.module.css.map */

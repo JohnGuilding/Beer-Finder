@@ -1,5 +1,4 @@
 .header {
-  width: 100%;
   height: 120px;
   background-color: #2d967b;
   background: -webkit-gradient(linear, right top, left top, from(#06918a), to(#0f2c09));
@@ -13,13 +12,37 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  color: white;
 }
 
 .signedIn {
-  background-color: lightblue;
+  display: inline-block;
 }
 
 .signedOut {
   display: none;
+}
+
+.login {
+  cursor: pointer;
+}
+
+li {
+  background-color: transparent;
+  list-style: none;
+}
+
+li h1 {
+  background-color: transparent;
+}
+
+li div {
+  background-color: transparent;
+}
+
+.links {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
 }
 /*# sourceMappingURL=Header.module.css.map */

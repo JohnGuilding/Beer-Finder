@@ -8,7 +8,7 @@ import Dashboard from "./Dashboard/Dashboard";
 
 const Routes = (props) => {
 
-    const { user, beers } = props;
+    const { user, beers, searchBeers } = props;
 
     return (
         <Router className={styles.router}>
@@ -18,6 +18,7 @@ const Routes = (props) => {
             <Dashboard 
             path="/" 
             beers={beers}
+            searchBeers={searchBeers}
             />
         </Router>
     )

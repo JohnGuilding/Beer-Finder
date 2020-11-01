@@ -7,6 +7,7 @@ import firebase, { provider } from './firebase';
 
 function App() {
 
+  // PAGE LOAD BEERS //
   const [beers, setBeers] = useState([]);
 
   const fetchBeers = () => {
@@ -21,6 +22,18 @@ function App() {
     fetchBeers()
   }, []);
 
+
+  // SEARCH BEERS //
+  
+  const [searchBeers, setSearchBeers] = useState([]);
+
+  const fetchSearchBeers = (searchTerm) => {
+    fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
+    .then((response) => response.json())
+    .then((searchData) => {
+      setSearchBeers(searchData)
+    });
+  }
 
   // SIGN IN/OUT //
   const [user, setUser] = useState(null)
@@ -46,6 +59,16 @@ function App() {
     getUser();
   }, []);
 
+  // var docWidth = document.documentElement.offsetWidth;
+
+  // [].forEach.call(document.querySelectorAll('*'), function (el) {
+  //   if (el.offsetWidth > docWidth) {
+  //     console.log(el);
+  //   }
+  // });
+
+  const [searchBoolean, setSearchBoolean] = useState('');
+
   return (
     <main>
         <Header
@@ -54,14 +77,14 @@ function App() {
         signOut={signOut}
         />
         <Search 
-        // updateSearchText={???} 
-        // updateSearchText={searchterm} ???
+        updateSearchText={fetchSearchBeers}
+        setSearchBoolean={setSearchBoolean}
         />
         <Routes 
         user={user} 
         beers={beers}
-        // setRandomBeer={getRandomBeer} 
-        // randomBeer={randomBeer}
+        searchBeers={searchBeers}
+        searchBoolean={searchBoolean}
         />
     </main>
   );

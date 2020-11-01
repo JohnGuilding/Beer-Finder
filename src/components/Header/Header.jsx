@@ -5,25 +5,28 @@ import { Link } from '@reach/router';
 const Header = (props) => {
 
 const { user, signIn, signOut } = props;
-console.log(user);
 
-const showGreeting = user ? styles.signedIn : styles.signedOut;
+// const showGreeting = user ? styles.signedIn : styles.signedOut;
 
 const ShowUserName = user ? user.displayName : 'guest';
 
+// SHOWS LOGIN OR LOGOUT OPTION //
+const loginOption = !user ? <li ionClick={signIn} className={styles.login}>Sign In</li> : <li onClick={signOut} className={styles.login}>Sign Out</li>
+
     return (
-        <section className={styles.header}>
-            <h1>Beer App</h1>
-            <button onClick={signIn}>Sign In</button>
-            <button onClick={signOut}>Sign Out</button>
-            <div className={showGreeting}>Welcome {ShowUserName}</div>
-            <Link to="/">
-                <div>home</div>
-            </Link>
-            <Link to="/suprise">
+        <ul className={styles.header}>
+            <li>
+                <h1>Beer App</h1>
+            </li>
+            <li>Welcome {ShowUserName}</li>
+            {/* <Link className={styles.links} to="/">
+                <li>home</li>
+            </Link> */}
+            {/* <Link to="/suprise">
                 <div>suprise</div>
-            </Link>
-        </section>
+            </Link> */}
+            {loginOption}
+        </ul>
     )
 }
 
