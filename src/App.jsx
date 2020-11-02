@@ -7,37 +7,29 @@ import firebase, { provider } from './firebase';
 
 function App() {
 
-  // PAGE LOAD BEERS //
+  // state 
   const [beers, setBeers] = useState([]);
+  const [user, setUser] = useState(null)
 
-  const fetchBeers = () => {
-    fetch("https://api.punkapi.com/v2/beers")
-    .then((response) => response.json())
-    .then((data) => {
-      setBeers(data)
-    });
-  }
-
+  // hooks
   useEffect(() => {
-    fetchBeers()
+    fetchBeers();
+    getUser();
   }, []);
 
+  // helper functions
 
   // SEARCH BEERS //
-  
-  const [searchBeers, setSearchBeers] = useState([]);
-
-  const fetchSearchBeers = (searchTerm) => {
-    fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
-    .then((response) => response.json())
-    .then((searchData) => {
-      setSearchBeers(searchData)
+  const fetchBeers = (searchTerm) => {
+    const url = searchTerm ? `https://api.punkapi.com/v2/beers?beer_name=${searchTerm}` : "https://api.punkapi.com/v2/beers"
+    fetch(url)
+      .then((response) => response.json())
+      .then((searchData) => {
+        setBeers(searchData)
     });
   }
 
   // SIGN IN/OUT //
-  const [user, setUser] = useState(null)
-
   const signIn = () => {
     firebase.auth().signInWithRedirect(provider);
   }
@@ -55,36 +47,20 @@ function App() {
     });
   }
 
-  useEffect(() => {
-    getUser();
-  }, []);
-
-  // var docWidth = document.documentElement.offsetWidth;
-
-  // [].forEach.call(document.querySelectorAll('*'), function (el) {
-  //   if (el.offsetWidth > docWidth) {
-  //     console.log(el);
-  //   }
-  // });
-
-  const [searchBoolean, setSearchBoolean] = useState('');
 
   return (
     <main>
         <Header
-        user={user}
-        signIn={signIn}
-        signOut={signOut}
+          user={user}
+          signIn={signIn}
+          signOut={signOut}
         />
         <Search 
-        updateSearchText={fetchSearchBeers}
-        setSearchBoolean={setSearchBoolean}
+          updateSearchText={fetchBeers}
         />
         <Routes 
-        user={user} 
-        beers={beers}
-        searchBeers={searchBeers}
-        searchBoolean={searchBoolean}
+          user={user} 
+          beers={beers}
         />
     </main>
   );

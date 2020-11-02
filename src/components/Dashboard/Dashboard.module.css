@@ -10,6 +10,19 @@
       align-content: space-around;
 }
 
+.showModal {
+  opacity: 1;
+}
+
+.hideModal {
+  opacity: 0;
+}
+
+.modalBackground {
+  opacity: 0;
+  pointer-events: none;
+}
+
 @media only screen and (max-width: 1630px) {
   .dashboard {
     width: 100%;

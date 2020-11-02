@@ -1,33 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Dashboard.module.scss";
-import Card from "./../Card"
+import Card from "./../Card";
+import Modal from "./../Modal";
 
 const Dashboard = (props) => {
 
-    const { beers, searchBeers } = props;
+    const { beers } = props;
 
-    // const displayBeers = () => {
-    //     if (searchBeers) {
-    //         console.log('false');
-    //         // {beers ? beers.map(beer => <Card key={beer.id} beer={beer} />) : <h2>Beers Inbound</h2>}
-    //     } else {
-    //         console.log('true');
-    //         // {searchBeers.map(getSearchCard)}
-    //     }
-    // }
+    const [modal, setModal] = useState(false)
 
-    const getSearchCard = (searchBeer) => (
-        <Card key={searchBeer.id} searchBeer={searchBeer} />
-    );
+    const {modalInfo, setModalInfo} = useState("")
+
+
+
+    // IF MODAL CLICKED SHOW MODAL //
+    const modalShow = modal ? styles.showModal : styles.hideModal;
 
     return (
         <>
             <section className={styles.dashboard}>
-                {beers ? beers.map(beer => <Card key={beer.id} beer={beer} />) : <h2>Beers Inbound</h2>}
-                {/* {searchBeers ? searchBeers.map(searchBeer => <Card key={searchBeer.id} searchBeer={searchBeer} />) : <h2>Beers Inbound</h2>} */}
-                {/* {displayBeers} */}
-                {/* {searchBeers.map(getSearchCard)} */}
+                {beers ? beers.map(beer => 
+                <Card 
+                    key={beer.id} 
+                    beer={beer} 
+                    modal={modal}
+                    setModal={setModal}
+                    setModalInfo={setModalInfo}
+                />
+                ) : <h2>Beers Inbound</h2>}
             </section>
+            <div className={modalShow}>
+                <Modal 
+                    modalInfo={modalInfo}
+                />
+            </div>
         </>
     )
 }

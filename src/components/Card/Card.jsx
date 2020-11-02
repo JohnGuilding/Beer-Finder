@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./Card.module.scss";
+import Modal from "./../Modal";
 
 const Card = (props) => {
+
+    const { modal, setModal, setModalInfo } = props;
 
     const { 
         name,
@@ -11,18 +14,17 @@ const Card = (props) => {
         abv,
     } = props.beer;
 
-    // const { 
-    //     name,
-    //     tagline,
-    //     description,
-    //     image_url,
-    //     abv,
-    // } = props.searchBeer;
-
-
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
 
+    const shortenName = (name) => name.length < 30 ? name : name.substring(0, 25) + "...";
     const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
+
+    // TOGGLE SHOWING MODAL //
+    const modalToggle = () => {
+    setModal(!modal);
+    }
+
+    // setModalInfo(props.beer)
 
     return (
         <>
@@ -30,20 +32,15 @@ const Card = (props) => {
                 <div className={styles.card}>
                     <div className={styles.beerImg}>
                         <div className={styles.circle}></div>
-                        {/* <div 
-                            className={styles.can}
-                            style={{backgroundColor: `#${randomColor}`}}>
-                            <div className={styles.canTop}></div>
-                            <div className={styles.canBottom}></div>
-                        </div> */}
+
                         <img src={image_url} alt="A picture of beer"/>
                     </div>
                     <div className={styles.info}>
-                        <h2 className={styles.title}>{name}</h2>
+                        <h2 className={styles.title}>{shortenName(name)}</h2>
                         <h3>{tagline}</h3>
                         <p>{shortenDescription(description)}</p>
                         <div className={styles.moreInfo}>
-                            <button>More Info</button>
+                            <button onClick={() => modalToggle()}>More Info</button>
                         </div>
                     </div>
                 </div>
@@ -68,6 +65,13 @@ export default Card;
     <div className={styles.canBottom}></div>
 </article> */}
 
+// can jsx
+{/* <div 
+    className={styles.can}
+    style={{backgroundColor: `#${randomColor}`}}>
+    <div className={styles.canTop}></div>
+    <div className={styles.canBottom}></div>
+</div> */}
 
 
 // "food_pairing": [
