@@ -1,7 +1,7 @@
 .header {
     height: 120px;
     background-color: rgb(45, 150, 123);
-    background: linear-gradient(to left, rgb(6, 145, 138), rgb(15, 44, 9));
+    background: linear-gradient(to left, rgb(11, 216, 172), rgb(10, 77, 77));
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -23,19 +23,18 @@
 li {
     background-color: transparent;
     list-style: none;
+    text-decoration: none;
 
     h1 {
         background-color: transparent;
+        color: white;
     }
 
     div {
         background-color: transparent;
     }
-
 }
 
-.links {
-    background-color: transparent;
+.title {
     text-decoration: none;
-    color: white;
 }

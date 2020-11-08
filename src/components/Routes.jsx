@@ -8,7 +8,7 @@ import Dashboard from "./Dashboard/Dashboard";
 
 const Routes = (props) => {
 
-    const { user, beers } = props;
+    const { user, updateSearchText, beers } = props;
 
     return (
         <Router className={styles.router}>
@@ -17,6 +17,7 @@ const Routes = (props) => {
             </PrivateRoutes>
             <Dashboard 
             path="/" 
+            updateSearchText={updateSearchText}
             beers={beers}
             />
         </Router>

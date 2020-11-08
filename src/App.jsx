@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles/App.module.scss';
 import Header from "./components/Header/Header";
-import Search from "./components/Search/Search";
 import Routes from "./components/Routes";
 import firebase, { provider } from './firebase';
 
@@ -55,12 +54,10 @@ function App() {
           signIn={signIn}
           signOut={signOut}
         />
-        <Search 
-          updateSearchText={fetchBeers}
-        />
         <Routes 
           user={user} 
           beers={beers}
+          updateSearchText={fetchBeers}
         />
     </main>
   );
