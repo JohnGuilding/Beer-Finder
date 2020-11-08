@@ -1,12 +1,14 @@
-import React from "react";
+import React from 'react';
 import styles from "./Suprise.module.scss";
 
 const Suprise = () => {
-  return (
-    <>
-      <p>Suprise works</p>
-    </>
-  );
-};
+
+    return (
+        <div>
+            <button className={styles.btn}>Random Beer</button>
+            This is a suprise
+        </div>
+    )
+}
 
 export default Suprise;

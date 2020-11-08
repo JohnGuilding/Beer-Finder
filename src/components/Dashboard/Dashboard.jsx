@@ -12,14 +12,15 @@ const Dashboard = (props) => {
 
     const {modalInfo, setModalInfo} = useState("")
 
-
-
     // IF MODAL CLICKED SHOW MODAL //
     const modalShow = modal ? styles.showModal : styles.hideModal;
 
     return (
         <>
             <Search 
+                modal={modal}
+                setModal={setModal}
+                setModalInfo={setModalInfo}
                 updateSearchText={updateSearchText}
             />
             <section className={styles.dashboard}>
@@ -27,9 +28,6 @@ const Dashboard = (props) => {
                 <Card 
                     key={beer.id} 
                     beer={beer} 
-                    modal={modal}
-                    setModal={setModal}
-                    setModalInfo={setModalInfo}
                 />
                 ) : <h2>Beers Inbound</h2>}
             </section>

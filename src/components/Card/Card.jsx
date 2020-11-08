@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import styles from "./Card.module.scss";
-import Modal from "./../Modal";
+import CardFront from "../CardFront";
+import CardBack from "../CardBack";
 
 const Card = (props) => {
-
-    const { modal, setModal, setModalInfo } = props;
 
     const { 
         name,
@@ -19,13 +18,7 @@ const Card = (props) => {
     const shortenName = (name) => name.length < 30 ? name : name.substring(0, 25) + "...";
     const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
 
-    // TOGGLE SHOWING MODAL //
-    const modalToggle = () => {
-    setModal(!modal);
-    }
-
-    // setModalInfo(props.beer)
-
+ 
     return (
         <>
             <article className={styles.container}>
@@ -40,7 +33,7 @@ const Card = (props) => {
                         <h3>{tagline}</h3>
                         <p>{shortenDescription(description)}</p>
                         <div className={styles.moreInfo}>
-                            <button onClick={() => modalToggle()}>More Info</button>
+                            <button>More Info</button>
                         </div>
                     </div>
                 </div>
