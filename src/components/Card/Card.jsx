@@ -1,41 +1,27 @@
 import React, { useState } from 'react';
 import styles from "./Card.module.scss";
-import CardFront from "../CardFront";
-import CardBack from "../CardBack";
+import CardFront from "./CardFront";
+import CardBack from "./CardBack";
 
 const Card = (props) => {
 
-    const { 
-        name,
-        tagline,
-        description,
-        image_url,
-        abv,
-    } = props.beer;
+    const { beer } = props;
 
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    const [isFaceDown, setIsFaceDown] = useState(false);
 
-    const shortenName = (name) => name.length < 30 ? name : name.substring(0, 25) + "...";
-    const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
+    const flipStyles = isFaceDown ? styles.faceDown : "";
 
- 
     return (
         <>
-            <article className={styles.container}>
-                <div className={styles.card}>
-                    <div className={styles.beerImg}>
-                        <div className={styles.circle}></div>
-
-                        <img src={image_url} alt="A picture of beer"/>
-                    </div>
-                    <div className={styles.info}>
-                        <h2 className={styles.title}>{shortenName(name)}</h2>
-                        <h3>{tagline}</h3>
-                        <p>{shortenDescription(description)}</p>
-                        <div className={styles.moreInfo}>
-                            <button>More Info</button>
-                        </div>
-                    </div>
+            <article 
+                className={`${styles.recipeCard} ${flipStyles}`}
+                onClick={() => setIsFaceDown(!isFaceDown)}
+            >
+                <div className={styles.front}>
+                    <CardFront beer={beer}/>
+                </div>
+                <div className={styles.back}>
+                    <CardBack beer={beer}/>
                 </div>
             </article>
         </>
