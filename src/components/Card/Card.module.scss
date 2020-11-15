@@ -16,12 +16,16 @@
 
     .front {
         position: absolute;
+        // height: 90%;
+        // width: 90%;
         border: 2px solid orange;
         backface-visibility: hidden;
     }
 
     .back {
         position: absolute;
+        // height: 90%;
+        // width: 90%; 
         border: 2px solid green;
         backface-visibility: hidden;
         transform: rotateY(180deg);
