@@ -25,7 +25,7 @@ const Search = (props) => {
             to="/suprise">
             <h3>Random</h3>
           </div>
-          <Link className={styles.supriseBtn} to="/suprise">
+          <Link className={styles.supriseBtn} to="/favourites">
             <h3>Favourites</h3>
           </Link>
       </section>

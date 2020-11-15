@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Suprise from "./Suprise";
+import Favourites from "./Favourites";
 
 describe("Suprise tests", () => {
   it("should render", () => {
-    expect(render(<Suprise />)).toBeTruthy();
+    expect(render(<Favourites />)).toBeTruthy();
   });
 });

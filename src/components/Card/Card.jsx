@@ -11,11 +11,16 @@ const Card = (props) => {
 
     const flipStyles = isFaceDown ? styles.faceDown : "";
 
+    const handleClick = () => {
+        setIsFaceDown(!isFaceDown);
+        console.log('working');
+    }
+
     return (
         <>
             <article 
-                className={`${styles.recipeCard} ${flipStyles}`}
-                onClick={() => setIsFaceDown(!isFaceDown)}
+                className={`${styles.beerCard} ${flipStyles}`}
+                onClick={handleClick}
             >
                 <div className={styles.front}>
                     <CardFront beer={beer}/>

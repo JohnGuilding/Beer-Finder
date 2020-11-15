@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from "./Suprise.module.scss";
+import styles from "./Favourites.module.scss";
 
-const Suprise = () => {
+const Favourites = () => {
 
     return (
         <div>
             <button className={styles.btn}>Random Beer</button>
-            This is a suprise
+            Favourites
         </div>
     )
 }
 
-export default Suprise;
+export default Favourites;

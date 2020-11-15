@@ -1,8 +1,8 @@
 .header {
   height: 120px;
   background-color: #2d967b;
-  background: -webkit-gradient(linear, right top, left top, from(#06918a), to(#0f2c09));
-  background: linear-gradient(to left, #06918a, #0f2c09);
+  background: -webkit-gradient(linear, right top, left top, from(#0bd8ac), to(#0a4d4d));
+  background: linear-gradient(to left, #0bd8ac, #0a4d4d);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,19 +30,19 @@
 li {
   background-color: transparent;
   list-style: none;
+  text-decoration: none;
 }
 
 li h1 {
   background-color: transparent;
+  color: white;
 }
 
 li div {
   background-color: transparent;
 }
 
-.links {
-  background-color: transparent;
+.title {
   text-decoration: none;
-  color: white;
 }
 /*# sourceMappingURL=Header.module.css.map */

@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from "@reach/router";
 import styles from "./../styles/App.module.scss"
 import PrivateRoutes from "./PrivateRoutes";
-import Suprise from "./Suprise";
+import Favourites from "./Favourites";
 import Dashboard from "./Dashboard/Dashboard";
 
 
@@ -13,12 +13,12 @@ const Routes = (props) => {
     return (
         <Router className={styles.router}>
             <PrivateRoutes path="/" user={user}>
-                <Suprise path='/suprise' />
+                <Favourites path='/favourites' />
             </PrivateRoutes>
             <Dashboard 
-            path="/" 
-            updateSearchText={updateSearchText}
-            beers={beers}
+                path="/" 
+                updateSearchText={updateSearchText}
+                beers={beers}
             />
         </Router>
     )

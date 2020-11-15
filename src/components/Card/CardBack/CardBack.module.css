@@ -1,0 +1,204 @@
+.container {
+  width: 450px;
+  height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card {
+  /* here */
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  height: 500px;
+  width: 300px;
+  border-radius: 30px;
+  padding: 0 5rem;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.beerImg {
+  width: 170px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.beerImg img {
+  height: 90px;
+  z-index: 2;
+  -webkit-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+  background-color: transparent;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  background: -webkit-gradient(linear, right top, left top, from(#0bd8ac), to(#0a4d4d));
+  background: linear-gradient(to left, #0bd8ac, #0a4d4d);
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.info {
+  width: 250px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.info h2 {
+  font-size: 30px;
+  -webkit-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+}
+
+.info h3 {
+  font-size: 15px;
+  padding: 10px 0;
+  color: #585858;
+  font-weight: lighter;
+  -webkit-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+  font-style: italic;
+  /* border: 1px solid red; */
+}
+
+.moreInfo {
+  margin-top: 10px;
+  -webkit-transition: all 0.75s ease-out;
+  transition: all 0.75s ease-out;
+}
+
+.moreInfo button {
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 0;
+  background: -webkit-gradient(linear, right top, left top, from(#0bd8ac), to(#0a4d4d));
+  background: linear-gradient(to left, #0bd8ac, #0a4d4d);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: bolder;
+}
+
+.moreInfo button:focus {
+  outline: none;
+}
+
+.can {
+  position: absolute;
+  z-index: 1;
+  width: 90px;
+  height: 130px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.can .canTop {
+  border-bottom: 10px solid grey;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  height: 0;
+  width: 85px;
+}
+
+.can .canBottom {
+  border-top: 10px solid grey;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  height: 0;
+  width: 85px;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .container {
+    width: 300px;
+    height: 450px;
+  }
+  .card {
+    width: 250px;
+    height: 400px;
+  }
+  .info {
+    width: 200px;
+    height: 250px;
+  }
+  .info h2 {
+    font-size: 20px;
+  }
+  .info h3 {
+    font-size: 10px;
+    padding: 5px 0;
+  }
+  p {
+    font-size: 10px;
+  }
+  .moreInfo {
+    margin-top: 5px;
+  }
+  .moreInfo button {
+    font-size: 10px;
+  }
+}
+/*# sourceMappingURL=CardBack.module.css.map */
