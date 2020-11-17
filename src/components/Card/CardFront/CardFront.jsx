@@ -3,6 +3,8 @@ import styles from "./CardFront.module.scss";
 
 const CardFront = (props) => {
 
+  const { handleClick } = props;
+
   const { 
     name,
     tagline,
@@ -17,8 +19,7 @@ const CardFront = (props) => {
   const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
   return (
     <>
-      <article className={styles.container}>
-        <div className={styles.card}>
+        <article className={styles.card}>
           <div className={styles.beerImg}>
             <div className={styles.circle}></div>
 
@@ -29,11 +30,10 @@ const CardFront = (props) => {
             <h3>{tagline}</h3>
             <p>{shortenDescription(description)}</p>
             <div className={styles.moreInfo}>
-                <button>More Info</button>
+                <button onClick={handleClick}>More Info</button>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
     </>
   );
 };

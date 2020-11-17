@@ -34,6 +34,7 @@ const Dashboard = (props) => {
             <div className={modalShow}>
                 <Modal 
                     modalInfo={modalInfo}
+                    modal={modal}
                 />
             </div>
         </>

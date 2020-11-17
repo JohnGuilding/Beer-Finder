@@ -20,13 +20,18 @@ const Card = (props) => {
         <>
             <article 
                 className={`${styles.beerCard} ${flipStyles}`}
-                onClick={handleClick}
             >
                 <div className={styles.front}>
-                    <CardFront beer={beer}/>
+                    <CardFront 
+                        beer={beer}
+                        handleClick={handleClick}                   
+                    />
                 </div>
                 <div className={styles.back}>
-                    <CardBack beer={beer}/>
+                    <CardBack 
+                        beer={beer}
+                        handleClick={handleClick}
+                    />
                 </div>
             </article>
         </>

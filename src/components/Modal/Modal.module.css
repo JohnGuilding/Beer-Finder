@@ -1,7 +1,6 @@
 .modal {
   position: fixed;
   width: 70%;
-  height: 400px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 25px;
@@ -12,5 +11,13 @@
   top: 300px;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+}
+
+.showModal {
+  height: 400px;
+}
+
+.hideModal {
+  height: 0;
 }
 /*# sourceMappingURL=Modal.module.css.map */

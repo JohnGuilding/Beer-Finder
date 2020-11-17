@@ -1,7 +1,6 @@
 .modal {
     position: fixed;
     width: 70%;
-    height: 400px;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 25px;
@@ -10,4 +9,12 @@
     left: 15%;
     top: 300px;
     transition: all 0.3s ease-out;
+}
+
+.showModal {
+    height: 400px;
+}
+
+.hideModal {
+    height: 0;
 }

@@ -3,6 +3,8 @@ import styles from "./CardBack.module.scss";
 
 const CardBack = (props) => {
 
+  const { handleClick } = props;
+
   const { 
     name,
     tagline,
@@ -17,18 +19,16 @@ const CardBack = (props) => {
   const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
   return (
     <>
-      <article className={styles.container}>
-        <div className={styles.card}>
+        <article className={styles.card}>
           <div className={styles.info}>
             <h2 className={styles.title}>{shortenName(name)}</h2>
             <h3>{tagline}</h3>
             <p>{shortenDescription(description)}</p>
             <div className={styles.moreInfo}>
-                <button>Back</button>
+                <button onClick={handleClick}>Back</button>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
     </>
   );
 };
