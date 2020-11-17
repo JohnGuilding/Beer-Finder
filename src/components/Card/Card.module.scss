@@ -1,6 +1,4 @@
 .beerCard {
-    // width: 450px;
-    // height: 650px;
     height: 500px;
     width: 300px; 
     transition: transform 1s;
@@ -9,7 +7,6 @@
     position: relative;
     z-index: 0;
     margin: 50px;
-    // border: 2px solid red;
 
     &.faceDown {
         transform: rotateY(180deg);
@@ -17,17 +14,15 @@
 
     .front {
         position: absolute;
-        // height: 90%;
-        // width: 90%;
-        // border: 2px solid orange;
+        height: 100%;
+        width: 100%;
         backface-visibility: hidden;
     }
 
     .back {
         position: absolute;
-        // height: 90%;
-        // width: 90%; 
-        // border: 2px solid green;
+        height: 100%;
+        width: 100%;
         backface-visibility: hidden;
         transform: rotateY(180deg);
     }
