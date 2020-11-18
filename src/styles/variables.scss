@@ -1,0 +1,13 @@
+%card {
+    /* here */
+    // transform-style: preserve-3d;*******************************
+    height: 500px;
+    width: 300px;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: 2px solid green;
+}

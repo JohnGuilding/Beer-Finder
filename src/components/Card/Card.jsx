@@ -16,6 +16,8 @@ const Card = (props) => {
         console.log('working');
     }
 
+    console.log(beer);
+
     return (
         <>
             <article 
