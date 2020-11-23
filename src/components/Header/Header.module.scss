@@ -1,6 +1,8 @@
+@import "./../../styles/variables.scss";
+
 .header {
     height: 120px;
-    background: linear-gradient(to left, rgb(11, 216, 172), rgb(10, 77, 77));
+    background: $base-color;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

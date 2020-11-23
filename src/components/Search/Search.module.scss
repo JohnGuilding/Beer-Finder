@@ -1,3 +1,5 @@
+@import "./../../styles/variables.scss";
+
 .search {
     display: flex;
     align-items: center;
@@ -19,7 +21,7 @@
     margin: 10px;
     border-radius: 50px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to left, rgb(11, 216, 172), rgb(10, 77, 77));
+    background: $base-color;
     text-decoration: none;
     display: flex;
     justify-content: center;

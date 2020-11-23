@@ -1,3 +1,5 @@
+@import "./../../../styles/variables.scss";
+
 // .container {
 //     width: 450px;
 //     height: 650px;
@@ -51,7 +53,7 @@
 .circle {
     width: 150px;
     height: 150px;
-    background: linear-gradient(to left, rgb(11, 216, 172), rgb(10, 77, 77));
+    background: $base-color;
     position: absolute;
     border-radius: 50%;
     z-index: 1;
@@ -91,7 +93,7 @@
     width: 100%;
     margin: 15px 0;
     padding: 10px 0;
-    background: linear-gradient(to left, rgb(11, 216, 172), rgb(10, 77, 77));
+    background: $base-color;
     border: none;
     color: white;
     cursor: pointer;
