@@ -21,7 +21,7 @@ const CardBack = (props) => {
   return (
     <>
         <article className={styles.card}>
-          <div className={styles.info}>
+          <div className={styles.container}>
             <h2 className={styles.title}>{name}</h2>
             <h3>{abv}% ABV</h3>
             <div className={styles.scrollBox}>
