@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CardBack.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CardBack = (props) => {
 
   const { handleClick } = props;
+
+  const [favState, setFavState] = useState(false);
 
   const { 
     name,
@@ -14,15 +17,21 @@ const CardBack = (props) => {
     food_pairing
   } = props.beer;
 
-  // let randomColor = Math.floor(Math.random()*16777215).toString(16);
+  const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
+  
+  const handleFavClick = (e) => {
+    e.stopPropagation();
+    setFavState(!favState);
+  }; 
 
-  // const shortenName = (name) => name.length < 30 ? name : name.substring(0, 25) + "...";
-  // const shortenDescription = (description) => description.length < 100 ? description : description.substring(0, 80) + "...";
   return (
     <>
         <article className={styles.card}>
           <div className={styles.container}>
             <h2 className={styles.title}>{name}</h2>
+            <span className={styles.heart} onClick={handleFavClick}>
+              <FontAwesomeIcon icon={heartIcon} />
+            </span>
             <h3>{abv}% ABV</h3>
             <div className={styles.scrollBox}>
               <p>{description}</p>

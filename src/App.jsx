@@ -3,6 +3,7 @@ import styles from './styles/App.module.scss';
 import Header from "./components/Header/Header";
 import Routes from "./components/Routes";
 import firebase, { provider } from './firebase';
+import "./fontawesome";
 
 function App() {
 
