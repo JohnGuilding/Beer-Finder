@@ -23,7 +23,7 @@ const CardBack = (props) => {
         <article className={styles.card}>
           <div className={styles.info}>
             <h2 className={styles.title}>{name}</h2>
-            <h3>{abv}%</h3>
+            <h3>{abv}% ABV</h3>
             <div className={styles.scrollBox}>
               <p>{description}</p>
               <h3 className={styles.pairingsTitle}>Food Pairings</h3>
