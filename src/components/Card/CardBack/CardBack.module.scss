@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     // border: 2px solid green;
 }
 
@@ -27,7 +28,7 @@
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     justify-content: space-between;
     // border: 3px solid orange;
 }
@@ -39,9 +40,18 @@
 }
 
 .heart {
+    position: absolute;
     color: red;
+    background-color: transparent;
     font-size: 25px;
     cursor: pointer;
+    z-index: 100;
+    right: 17px;
+    top: 10px;
+
+    .inner {
+        background-color: transparent;
+    }
 }
 
 .container h3 {
@@ -85,22 +95,22 @@
 }
 
 /* Scrollbar styles */
-::-webkit-scrollbar {
-    width: 15px;
-}
+// ::-webkit-scrollbar {
+//     width: 15px;
+// }
 
-::-webkit-scrollbar-track {
-    background-color: rgb(240, 236, 236);
-}
+// ::-webkit-scrollbar-track {
+//     background-color: rgb(240, 236, 236);
+// }
 
-::-webkit-scrollbar-thumb {
-    background-color: lightgrey;
-    border-radius: 10px;
-}
+// ::-webkit-scrollbar-thumb {
+//     background-color: lightgrey;
+//     border-radius: 10px;
+// }
 
-::-webkit-scrollbar-thumb:hover {
-    background: darkgrey;
-}
+// ::-webkit-scrollbar-thumb:hover {
+//     background: darkgrey;
+// }
 
 .moreInfo {
     margin-top: 10px;

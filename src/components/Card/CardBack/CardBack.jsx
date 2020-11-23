@@ -27,11 +27,11 @@ const CardBack = (props) => {
   return (
     <>
         <article className={styles.card}>
+          <span className={styles.heart} onClick={handleFavClick}>
+            <FontAwesomeIcon icon={heartIcon} className={styles.inner} />
+          </span>
           <div className={styles.container}>
             <h2 className={styles.title}>{name}</h2>
-            <span className={styles.heart} onClick={handleFavClick}>
-              <FontAwesomeIcon icon={heartIcon} />
-            </span>
             <h3>{abv}% ABV</h3>
             <div className={styles.scrollBox}>
               <p>{description}</p>
