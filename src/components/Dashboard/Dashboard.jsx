@@ -12,9 +12,6 @@ const Dashboard = (props) => {
 
     const {modalInfo, setModalInfo} = useState("")
 
-    // IF MODAL CLICKED SHOW MODAL //
-    const modalShow = modal ? styles.showModal : styles.hideModal;
-
     return (
         <>
             <Search 
@@ -31,7 +28,7 @@ const Dashboard = (props) => {
                 />
                 ) : <h2>Beers Inbound</h2>}
             </section>
-            <div className={modalShow}>
+            <div>
                 <Modal 
                     modalInfo={modalInfo}
                     modal={modal}

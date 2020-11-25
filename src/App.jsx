@@ -65,32 +65,3 @@ function App() {
 }
 
 export default App;
-
-
-  // const grabBeers = (searchTerm) => {
-  //   fetch (`https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`)
-  //       .then((res) => res.json())
-  //       .then((res) => {
-  //           const response = res.map(item => item.name)
-  //           // can pass this as prop
-  //           setSearchBeers(response);
-  //       });
-  //   }
-
-
-  // RANDOM BEER BTN //
-  // const [randomBeer, setRandomBeer] = useState([])
-
-  // const getRandomBeer = () => {
-  //     fetch (`https://api.punkapi.com/v2/beers/random`)
-  //         .then((res) => res.json())
-  //         .then((res) => {
-  //             const response = res.map((item) => {
-  //               return (item.name);
-  //             });
-  //             console.log(response);
-  //             // can pass this as prop
-  //             setRandomBeer(response);
-  //             console.log(res);
-  //         });
-  //     }
