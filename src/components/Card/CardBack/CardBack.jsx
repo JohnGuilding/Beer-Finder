@@ -19,8 +19,7 @@ const CardBack = (props) => {
 
   const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
   
-  const handleFavClick = (e) => {
-    e.stopPropagation();
+  const handleFavClick = () => {
     setFavState(!favState);
   }; 
 

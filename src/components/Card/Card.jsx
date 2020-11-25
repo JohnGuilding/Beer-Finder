@@ -22,6 +22,7 @@ const Card = (props) => {
         <>
             <article 
                 className={`${styles.beerCard} ${flipStyles}`}
+                data-cy="card"
             >
                 <div className={styles.front}>
                     <CardFront 

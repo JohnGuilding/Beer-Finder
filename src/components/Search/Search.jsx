@@ -18,7 +18,7 @@ const Search = (props) => {
 
   return (
       <section className={styles.search}>
-          <input type="text" placeholder="Search our beverages..." onInput={e => updateSearchText(e.target.value)} />
+          <input data-cy="searchBox" type="text" placeholder="Search our beverages..." onInput={e => updateSearchText(e.target.value)} />
           <div 
             className={styles.supriseBtn} 
             onClick={() => modalToggle()}
