@@ -10,9 +10,7 @@ const CardBack = (props) => {
 
   const { 
     name,
-    tagline,
     description,
-    image_url,
     abv,
     food_pairing
   } = props.beer;

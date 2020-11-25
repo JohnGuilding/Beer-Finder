@@ -8,9 +8,9 @@ const Dashboard = (props) => {
 
     const { updateSearchText, beers } = props;
 
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(false);
 
-    const {modalInfo, setModalInfo} = useState("")
+    const [modalInfo, setModalInfo] = useState([]);
 
     return (
         <>
@@ -32,6 +32,7 @@ const Dashboard = (props) => {
                 <Modal 
                     modalInfo={modalInfo}
                     modal={modal}
+                    setModal={setModal}
                 />
             </div>
         </>

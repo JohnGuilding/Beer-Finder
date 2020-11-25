@@ -13,10 +13,7 @@ const Card = (props) => {
 
     const handleClick = () => {
         setIsFaceDown(!isFaceDown);
-        console.log('working');
     }
-
-    console.log(beer);
 
     return (
         <>
