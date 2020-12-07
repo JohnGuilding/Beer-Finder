@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles/App.module.scss';
 import Header from "./components/Header/Header";
 import Routes from "./components/Routes";
-// import firebase, { provider } from './firebase';
 import { UserProvider } from "./context/userContext";
+import { CrudProvider } from "./context/crudContext";
 import "./fontawesome";
 
 function App() {
@@ -30,14 +30,15 @@ function App() {
 
   return (
     <UserProvider>
-      <main>
-          <Header />
-          <Routes 
-            beers={beers}
-            updateSearchText={fetchBeers}
-            // addToFavourites={addToFavourites}
-          />
-      </main>
+      <CrudProvider>
+        <main>
+            <Header />
+            <Routes 
+              beers={beers}
+              updateSearchText={fetchBeers}
+            />
+        </main>
+      </CrudProvider>
     </UserProvider>
   );
 }
