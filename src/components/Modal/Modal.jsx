@@ -11,17 +11,11 @@ const Modal = (props) => {
     tagline,
     description,
     image_url,
-    abv,
-    food_pairing
+    abv
   } = props.modalInfo;
   
   // IF MODAL CLICKED SHOW MODAL //
   const modalShow = modal ? styles.showModal : styles.hideModal;
-
-  // const foodPairingsLi = food_pairing ? food_pairing.forEach(pair => (
-  //   <li>{pair}</li>
-  // )) : (<li>pairs</li>);
-  // console.log(food_pairing);
 
   const closeModal = () => {
     setModal(!modal);

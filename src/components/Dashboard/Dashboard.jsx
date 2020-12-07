@@ -16,7 +16,7 @@ const Dashboard = (props) => {
         <>
             <Search 
                 modal={modal}
-                setModal={setModal}
+                setModal={setModal} 
                 setModalInfo={setModalInfo}
                 updateSearchText={updateSearchText}
             />

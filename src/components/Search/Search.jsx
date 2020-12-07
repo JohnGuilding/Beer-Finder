@@ -27,7 +27,7 @@ const Search = (props) => {
           <div 
             className={styles.btn} 
             onClick={() => modalToggle()}
-            to="/suprise">
+          >
             <h3>Random</h3>
           </div>
           <Link className={styles.btn} to="/favourites">
