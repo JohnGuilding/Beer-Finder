@@ -24,6 +24,7 @@ const Modal = (props) => {
   return (
     <section className={`${styles.modal} ${modalShow}`}>
       <FontAwesomeIcon icon={'fa', 'times'} onClick={closeModal} className={styles.closeModal} />
+      <p>0</p>
 
       <article className={styles.card}>
 
