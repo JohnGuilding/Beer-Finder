@@ -5,7 +5,7 @@ const Favourites = () => {
 
     return (
         <div>
-            Favourites
+            Favourites functionality will be live by 12th December 2020
         </div>
     )
 }

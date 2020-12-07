@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState, useContext } from "react";
 import { useEffect } from "react";
 import { firestore } from "./../firebase";
 import { UserContext } from "./userContext";
@@ -38,12 +38,12 @@ export const CrudProvider = (props) => {
     const removeFromFavourites = () => {
         const query = firestore
             .collection("favourites")
-            .where("id", "==", recipe.id)
+            // .where("id", "==", favourite/beer?.id)
             .where("uid", "==", userContext.user.uid);
 
         query.get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => doc.ref.delete());
-            fetchCookbook();
+            getFavourites();
         });
     };
 
@@ -53,7 +53,7 @@ export const CrudProvider = (props) => {
 
     return (
         <CrudContext.Provider
-            value={{ getFavourites, addToFavourites, RemoveFromFavourites }}
+            value={{ getFavourites, addToFavourites, removeFromFavourites }}
         >
             {props.children}
         </CrudContext.Provider>

@@ -19,6 +19,7 @@ const CardBack = (props) => {
   
   const handleFavClick = () => {
     setFavState(!favState);
+    alert('Favourites functionality will be live by 12th December 2020')
   }; 
 
   return (
