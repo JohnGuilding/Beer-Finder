@@ -20,6 +20,11 @@ const Modal = (props) => {
   const closeModal = () => {
     setModal(!modal);
   }
+  
+// todo
+{/* <div className={styles.left}>
+  <img src={beer.image_url ? beer.image_url : brewdoglogo}/> 
+</div> */}
 
   return (
     <section className={`${styles.modal} ${modalShow}`}>

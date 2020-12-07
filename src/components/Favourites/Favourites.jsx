@@ -5,7 +5,6 @@ const Favourites = () => {
 
     return (
         <div>
-            <button className={styles.btn}>Random Beer</button>
             Favourites
         </div>
     )

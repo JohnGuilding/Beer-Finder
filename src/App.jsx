@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles/App.module.scss';
 import Header from "./components/Header/Header";
 import Routes from "./components/Routes";
-import firebase, { provider } from './firebase';
+import firebase, { provider, firestore } from './firebase';
 import "./fontawesome";
 
 function App() {
@@ -46,6 +46,20 @@ function App() {
       }
     });
   }
+  ////////////////////////////////////////////////////////////////
+
+  // const 
+
+  // const addToFavourites = (favouriteBeer) => {
+  //   firestore
+  //     .collection('favourites')
+  //     .doc()
+  //     .set(favouriteBeer)
+
+  // }
+
+
+  ////////////////////////////////////////////////////////////////
 
 
   return (
