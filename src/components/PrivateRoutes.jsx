@@ -3,6 +3,7 @@ import firebase from './../firebase';
 import { navigate } from '@reach/router';
 
 const PrivateRoutes = (props) => {
+
     const { children } = props;
 
     useEffect(() => {

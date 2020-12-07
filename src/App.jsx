@@ -10,12 +10,10 @@ function App() {
 
   // state 
   const [beers, setBeers] = useState([]);
-  // const [user, setUser] = useState(null)
 
   // hooks
   useEffect(() => {
     fetchBeers();
-    getUser();
   }, []);
 
   // helper functions
@@ -30,52 +28,14 @@ function App() {
     });
   }
 
-  // SIGN IN/OUT //
-  // const signIn = () => {
-  //   firebase.auth().signInWithRedirect(provider);
-  // }
-  // const signOut = () => {
-  //   firebase.auth().signOut();
-  // }
-
-  // const getUser = () => {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     if(user) {
-  //       setUser(user);
-  //     } else {
-  //       setUser(null);
-  //     }
-  //   });
-  // }
-  ////////////////////////////////////////////////////////////////
-
-  // const 
-
-  // const addToFavourites = () => {
-  //   firestore
-  //     .collection('favourites')
-  //     .doc()
-  //     .set()
-
-  // }
-
-
-  ////////////////////////////////////////////////////////////////
-
-
   return (
     <UserProvider>
       <main>
-          <Header
-            user={user}
-            signIn={signIn}
-            signOut={signOut}
-          />
+          <Header />
           <Routes 
-            user={user} 
             beers={beers}
             updateSearchText={fetchBeers}
-            addToFavourites={addToFavourites}
+            // addToFavourites={addToFavourites}
           />
       </main>
     </UserProvider>

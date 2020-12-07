@@ -1,9 +1,9 @@
-import React, { createContext, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import firebase, { provider } from "./../firebase";
 
 export const UserContext = createContext({});
 
-export const UserProvider = () => {
+export const UserProvider = (props) => {
     const [user, setUser] = useState(null);
 
     // SIGN IN/OUT //

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Header.module.scss";
 import { Link } from '@reach/router';
+import { UserContext } from "./../../context/userContext";
 
-const Header = (props) => {
+const Header = () => {
+    const userContext = useContext(UserContext);
+    const { user, signIn, signOut } = userContext;
 
-const { user, signIn, signOut } = props;
+    const ShowUserName = user ? user.displayName : 'guest';
 
-const ShowUserName = user ? user.displayName : 'guest';
-
-// SHOWS LOGIN OR LOGOUT OPTION //
-const loginOption = !user ? <li onClick={signIn} className={styles.login}>Sign In</li> : <li onClick={signOut} className={styles.login}>Sign Out</li>
+    // SHOWS LOGIN OR LOGOUT OPTION //
+    const loginOption = !user ? <li onClick={signIn} className={styles.login}>Sign In</li> : <li onClick={signOut} className={styles.login}>Sign Out</li>
 
     return (
         <ul className={styles.header}>
