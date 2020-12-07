@@ -10,7 +10,6 @@
 
 .showModal {
     display: inline-block;
-    // opacity: 1; 
     height: 500px;
     width: 1000px;
     background-color: white; 
@@ -36,7 +35,7 @@
     position: absolute;
     cursor: pointer;
     color: blue;
-    font-size: 23px;
+    font-size: 22px;
     right: 50px;
     top: 8px;
 }
@@ -101,4 +100,15 @@
     }
 }
 
+.infoColumn2 {
+    height: 250px;
+    overflow: auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(238, 238, 238);
+
+    P {
+        background-color: rgb(238, 238, 238);
+    }
+}
 
