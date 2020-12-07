@@ -1,19 +1,10 @@
 import React from "react";
 import styles from "./Search.module.scss";
-import Modal from "./../Modal";
 import { Link } from '@reach/router';
 
 const Search = (props) => {
 
-  const { modal, setModal, setModalInfo, updateSearchText } = props;
-
-  const fetchRandomBeer = () => {
-    fetch("https://api.punkapi.com/v2/beers/random")
-    .then((response) => response.json())
-    .then((data) => {
-      setModalInfo(data[0]);
-    });
-  }
+  const { modal, setModal, setModalInfo, updateSearchText, fetchRandomBeer } = props;
 
   // TOGGLE SHOWING MODAL //
   const modalToggle = () => {

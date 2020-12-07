@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Modal = (props) => {
 
-  const { modal, setModal } = props;
+  const { modal, setModal, fetchRandomBeer } = props;
 
   const {
     name, 
@@ -23,8 +23,8 @@ const Modal = (props) => {
 
   return (
     <section className={`${styles.modal} ${modalShow}`}>
-      <FontAwesomeIcon icon={'fa', 'times'} onClick={closeModal} className={styles.closeModal} />
-      <p>0</p>
+      <FontAwesomeIcon icon={['fa', 'times']} onClick={closeModal} className={styles.closeModal} />
+      <FontAwesomeIcon icon={['fa', 'undo']} onClick={fetchRandomBeer} className={styles.refreshBeer} />
 
       <article className={styles.card}>
 
