@@ -30,7 +30,11 @@ const Dashboard = (props) => {
             />
             <section className={styles.dashboard}>
                 {beers ? (
-                    beers.map((beer) => <Card key={beer.id} beer={beer} />)
+                    beers.map((beer) => 
+                    <Card 
+                        key={beer.id} 
+                        beer={beer} 
+                    />)
                 ) : (
                     <h2>Beers Inbound</h2>
                 )}

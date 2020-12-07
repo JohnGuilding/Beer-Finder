@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles/App.module.scss';
 import Header from "./components/Header/Header";
 import Routes from "./components/Routes";
-import firebase, { provider, firestore } from './firebase';
+// import firebase, { provider } from './firebase';
+import { UserProvider } from "./context/userContext";
 import "./fontawesome";
 
 function App() {
 
   // state 
   const [beers, setBeers] = useState([]);
-  const [user, setUser] = useState(null)
+  // const [user, setUser] = useState(null)
 
   // hooks
   useEffect(() => {
@@ -30,31 +31,31 @@ function App() {
   }
 
   // SIGN IN/OUT //
-  const signIn = () => {
-    firebase.auth().signInWithRedirect(provider);
-  }
-  const signOut = () => {
-    firebase.auth().signOut();
-  }
+  // const signIn = () => {
+  //   firebase.auth().signInWithRedirect(provider);
+  // }
+  // const signOut = () => {
+  //   firebase.auth().signOut();
+  // }
 
-  const getUser = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if(user) {
-        setUser(user);
-      } else {
-        setUser(null);
-      }
-    });
-  }
+  // const getUser = () => {
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     if(user) {
+  //       setUser(user);
+  //     } else {
+  //       setUser(null);
+  //     }
+  //   });
+  // }
   ////////////////////////////////////////////////////////////////
 
   // const 
 
-  // const addToFavourites = (favouriteBeer) => {
+  // const addToFavourites = () => {
   //   firestore
   //     .collection('favourites')
   //     .doc()
-  //     .set(favouriteBeer)
+  //     .set()
 
   // }
 
@@ -63,18 +64,21 @@ function App() {
 
 
   return (
-    <main>
-        <Header
-          user={user}
-          signIn={signIn}
-          signOut={signOut}
-        />
-        <Routes 
-          user={user} 
-          beers={beers}
-          updateSearchText={fetchBeers}
-        />
-    </main>
+    <UserProvider>
+      <main>
+          <Header
+            user={user}
+            signIn={signIn}
+            signOut={signOut}
+          />
+          <Routes 
+            user={user} 
+            beers={beers}
+            updateSearchText={fetchBeers}
+            addToFavourites={addToFavourites}
+          />
+      </main>
+    </UserProvider>
   );
 }
 
