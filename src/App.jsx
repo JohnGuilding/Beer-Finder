@@ -17,6 +17,20 @@ function App() {
   }, []);
 
   // helper functions
+  
+  const cleanBeerData = (beer) => {
+    const cleanedBeer = {
+      id: beer.id,
+      name: beer.name,
+      tagline: beer.tagline,
+      description: beer.description,
+      image: beer.image_url,
+      abv: beer.abv,
+      foodPairing: beer.food_pairing,
+      isFav: false
+    };
+    return cleanedBeer;
+  }
 
   // SEARCH BEERS //
   const fetchBeers = (searchTerm) => {
@@ -24,9 +38,39 @@ function App() {
     fetch(url)
       .then((response) => response.json())
       .then((searchData) => {
-        setBeers(searchData)
+        const cleanBeers = searchData.map(cleanBeerData);
+        setBeers(cleanBeers);
+        // setBeers(searchData);
+        console.log(beers);
     });
   }
+
+  console.log(beers);
+  // name, 
+  // tagline,
+  // description,
+  // image_url,
+  // abv,
+  // food_pairing
+
+//   const cleanRecipeData = (recipe) => {
+//     const cleanedRecipe = {
+//     id: recipe.idMeal,
+//     name: recipe.strMeal,
+//     category: recipe.strCategory,
+//     area: recipe.strArea,
+//     instructions: recipe.strInstructions,
+//     thumbnail: recipe.strMealThumb,
+//     tags: recipe.strTags,
+//     ingredients: getIngredients(recipe),
+//     source: recipe.strSource,
+//     dateCreated: new Date().toUTCString(),
+//     dateModified: null,
+//     youtube: recipe.strYoutube,
+//     isFav: false,
+//     };
+//     return cleanedRecipe;
+// };
 
   return (
     <UserProvider>

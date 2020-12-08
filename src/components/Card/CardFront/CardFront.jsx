@@ -9,7 +9,7 @@ const CardFront = (props) => {
     name,
     tagline,
     description,
-    image_url
+    image
   } = props.beer;
 
   let randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -22,7 +22,7 @@ const CardFront = (props) => {
         <div className={styles.container}>
           <div className={styles.beerImg}>
             <div className={styles.circle}></div>
-            <img src={image_url} alt="A picture of beer"/>
+            <img src={image} alt="A picture of beer"/>
           </div>
           <div className={styles.info}>
             <h2 className={styles.title}>{shortenName(name)}</h2>

@@ -11,19 +11,20 @@ const CardBack = (props) => {
     name,
     description,
     abv,
-    food_pairing
+    foodPairing
   } = props.beer;
 
-  const [ favState, setFavState ] = useState(isFav);
+  // const [ favState, setFavState ] = useState(isFav);
   const crudContext = useContext(CrudContext);
   const { toggleFav } = crudContext;
 
-  const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
+  // const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
   
   //todo
   const handleFavClick = () => {
-    toggleFav(recipe)
-    setFavState(!isFav);
+    // toggleFav(beer)
+    // setFavState(!isFav);
+    // setFavState(!favState);
     alert('Favourites functionality will be live by 12th December 2020')
   }; 
 
@@ -31,7 +32,7 @@ const CardBack = (props) => {
     <>
         <article className={styles.card}>
           <span className={styles.heart} onClick={handleFavClick}>
-            <FontAwesomeIcon icon={heartIcon} className={styles.inner} />
+            {/* <FontAwesomeIcon icon={heartIcon} className={styles.inner} /> */}
           </span>
           <div className={styles.container}>
             <h2 className={styles.title}>{name}</h2>
@@ -40,9 +41,9 @@ const CardBack = (props) => {
               <p>{description}</p>
               <h3 className={styles.pairingsTitle}>Food Pairings</h3>
               <ul>
-                <li>{food_pairing[0]}</li>
-                <li>{food_pairing[1]}</li>
-                <li>{food_pairing[2]}</li>
+                <li>{foodPairing[0]}</li>
+                <li>{foodPairing[1]}</li>
+                <li>{foodPairing[2]}</li>
               </ul>
             </div>
             <div className={styles.moreInfo}>
