@@ -5,34 +5,36 @@ import { CrudContext } from "./../../../context/crudContext";
 
 const CardBack = (props) => {
 
-  const { handleClick } = props;
+  const { beer, handleClick } = props;
 
   const { 
-    name,
+    name, 
     description,
     abv,
-    foodPairing
-  } = props.beer;
+    foodPairing,
+    isFav
+  } = beer;
 
-  // const [ favState, setFavState ] = useState(isFav);
+  const [ favState, setFavState ] = useState(isFav);
   const crudContext = useContext(CrudContext);
-  const { toggleFav } = crudContext;
+  const { toggleFav, test } = crudContext;
 
-  // const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
+  const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
   
   //todo
   const handleFavClick = () => {
-    // toggleFav(beer)
-    // setFavState(!isFav);
-    // setFavState(!favState);
-    alert('Favourites functionality will be live by 12th December 2020')
+    toggleFav(beer)
+    setFavState(!isFav);
+    console.log(favState);
+    // alert('Favourites functionality will be live by 12th December 2020')
+    test();
   }; 
 
   return (
     <>
         <article className={styles.card}>
           <span className={styles.heart} onClick={handleFavClick}>
-            {/* <FontAwesomeIcon icon={heartIcon} className={styles.inner} /> */}
+            <FontAwesomeIcon icon={heartIcon} className={styles.inner} />
           </span>
           <div className={styles.container}>
             <h2 className={styles.title}>{name}</h2>
