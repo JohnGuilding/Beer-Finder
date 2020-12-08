@@ -6,7 +6,6 @@ export const UserContext = createContext({});
 export const UserProvider = (props) => {
     const [user, setUser] = useState(null);
 
-    // SIGN IN/OUT //
     const signIn = () => {
         firebase.auth().signInWithRedirect(provider);
     };

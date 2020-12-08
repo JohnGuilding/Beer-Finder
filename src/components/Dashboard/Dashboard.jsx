@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Dashboard.module.scss";
 import Search from "./../Search";
 import Card from "./../Card";
 import Modal from "./../Modal";
+import { ApiContext } from './../../context/apiContext';
 
-const Dashboard = (props) => {
-    const { updateSearchText, beers } = props;
+const Dashboard = () => {
+    const apiContext = useContext(ApiContext);
+    const { beers } = apiContext;
 
     const [modal, setModal] = useState(false);
-
     const [modalInfo, setModalInfo] = useState([]);
 
     const fetchRandomBeer = () => {
@@ -25,7 +26,6 @@ const Dashboard = (props) => {
                 modal={modal}
                 setModal={setModal}
                 setModalInfo={setModalInfo}
-                updateSearchText={updateSearchText}
                 fetchRandomBeer={fetchRandomBeer}
             />
             <section className={styles.dashboard}>

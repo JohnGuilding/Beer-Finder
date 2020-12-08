@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Search.module.scss";
 import { Link } from '@reach/router';
+import { ApiContext } from './../../context/apiContext';
 
 const Search = (props) => {
 
-  const { modal, setModal, setModalInfo, updateSearchText, fetchRandomBeer } = props;
+  const { modal, setModal, fetchRandomBeer } = props;
+  const apiContext = useContext(ApiContext);
+  const { fetchBeers } = apiContext;
 
   // TOGGLE SHOWING MODAL //
   const modalToggle = () => {
@@ -14,7 +17,7 @@ const Search = (props) => {
 
   return (
       <section className={styles.search}>
-          <input data-cy="searchBox" type="text" placeholder="Search our beverages..." onInput={e => updateSearchText(e.target.value)} />
+          <input data-cy="searchBox" type="text" placeholder="Search our beverages..." onInput={e => fetchBeers(e.target.value)} />
           <div 
             className={styles.btn} 
             onClick={() => modalToggle()}

@@ -6,9 +6,7 @@ import Favourites from "./Favourites";
 import Dashboard from "./Dashboard/Dashboard";
 
 
-const Routes = (props) => {
-
-    const { updateSearchText, beers } = props;
+const Routes = () => {
 
     return (
         <Router className={styles.router}>
@@ -17,8 +15,6 @@ const Routes = (props) => {
             </PrivateRoutes>
             <Dashboard 
                 path="/" 
-                updateSearchText={updateSearchText}
-                beers={beers}
             />
         </Router>
     )
