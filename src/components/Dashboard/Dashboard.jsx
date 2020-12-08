@@ -9,25 +9,9 @@ const Dashboard = () => {
     const apiContext = useContext(ApiContext);
     const { beers } = apiContext;
 
-    const [modal, setModal] = useState(false);
-    const [modalInfo, setModalInfo] = useState([]);
-
-    const fetchRandomBeer = () => {
-        fetch("https://api.punkapi.com/v2/beers/random")
-            .then((response) => response.json())
-            .then((data) => {
-                setModalInfo(data[0]);
-            });
-    };
-
     return (
         <>
-            <Search
-                modal={modal}
-                setModal={setModal}
-                setModalInfo={setModalInfo}
-                fetchRandomBeer={fetchRandomBeer}
-            />
+            <Search />
             <section className={styles.dashboard}>
                 {beers ? (
                     beers.map((beer) => 
@@ -40,12 +24,7 @@ const Dashboard = () => {
                 )}
             </section>
             <div>
-                <Modal
-                    modalInfo={modalInfo}
-                    modal={modal}
-                    setModal={setModal}
-                    fetchRandomBeer={fetchRandomBeer}
-                />
+                <Modal />
             </div>
         </>
     );

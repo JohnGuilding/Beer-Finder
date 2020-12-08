@@ -6,6 +6,8 @@ export const ApiProvider = (props) => {
 
     // state
     const [beers, setBeers] = useState([]);
+    const [modal, setModal] = useState(false);
+    const [modalInfo, setModalInfo] = useState([]);
 
     // helper functions
 
@@ -37,13 +39,21 @@ export const ApiProvider = (props) => {
             .catch((err) => console.log(err));
     };
 
+    const fetchRandomBeer = () => {
+        fetch("https://api.punkapi.com/v2/beers/random")
+            .then((response) => response.json())
+            .then((data) => {
+                setModalInfo(data[0]);
+            });
+    };
+
         // hooks
         useEffect(() => {
             fetchBeers();
         }, []);
 
     return (
-        <ApiContext.Provider value={{ beers, fetchBeers }}>
+        <ApiContext.Provider value={{ beers, fetchBeers, fetchRandomBeer, modalInfo, modal, setModal }}>
             {props.children}
         </ApiContext.Provider>
     )

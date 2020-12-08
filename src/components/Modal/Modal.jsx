@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Modal.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ApiContext } from './../../context/apiContext';
 
-const Modal = (props) => {
-
-  const { modal, setModal, fetchRandomBeer } = props;
+const Modal = () => {
+  const apiContext = useContext(ApiContext);
+  const { fetchRandomBeer, modal, setModal } = apiContext;
 
   const {
     name, 
@@ -12,7 +13,7 @@ const Modal = (props) => {
     description,
     image_url,
     abv
-  } = props.modalInfo;
+  } = apiContext.modalInfo;
   
   // IF MODAL CLICKED SHOW MODAL //
   const modalShow = modal ? styles.showModal : styles.hideModal;

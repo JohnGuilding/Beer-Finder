@@ -3,11 +3,11 @@ import styles from "./Search.module.scss";
 import { Link } from '@reach/router';
 import { ApiContext } from './../../context/apiContext';
 
-const Search = (props) => {
+const Search = () => {
 
-  const { modal, setModal, fetchRandomBeer } = props;
+  // const { modal, setModal } = props;
   const apiContext = useContext(ApiContext);
-  const { fetchBeers } = apiContext;
+  const { fetchBeers, fetchRandomBeer, modal, setModal } = apiContext;
 
   // TOGGLE SHOWING MODAL //
   const modalToggle = () => {
