@@ -1,5 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
-import { useEffect } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import { firestore } from "./../firebase";
 import { UserContext } from "./userContext";
 
@@ -26,19 +25,22 @@ export const CrudProvider = (props) => {
         }
     };
 
-    const addToFavourites = () => {
+    const addToFavourites = (beer) => {
         firestore
             .collection("favourites")
             .doc()
-            .set()
+            .set({
+                ...beer, 
+                uid: userContext.user.uid
+            })
             .then(getFavourites)
-            .ctahc((err) => console.log(err));
+            .catch((err) => console.log(err));
     };
 
-    const removeFromFavourites = () => {
+    const removeFromFavourites = (beer) => {
         const query = firestore
             .collection("favourites")
-            // .where("id", "==", favourite/beer?.id)
+            .where("id", "==", beer.id)
             .where("uid", "==", userContext.user.uid);
 
         query.get().then((querySnapshot) => {
@@ -47,14 +49,21 @@ export const CrudProvider = (props) => {
         });
     };
 
+    const toggleFav = (beer) => {
+        if (userContext.user) {
+            beer.isFav = !beer.isFav;
+            beer.isFav ? addToFavourites(beer) : removeFromFavourites(beer);
+        } else {
+            alert('you must be logged in to edit your favourites');
+        }
+    }
+
     useEffect(() => {
         getFavourites();
     }, []);
 
     return (
-        <CrudContext.Provider
-            value={{ getFavourites, addToFavourites, removeFromFavourites }}
-        >
+        <CrudContext.Provider value={{ favourites, toggleFav, addToFavourites }}>
             {props.children}
         </CrudContext.Provider>
     );

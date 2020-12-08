@@ -41,7 +41,7 @@ const Modal = (props) => {
           <div className={styles.infoColumn1}>
             <h2 className={styles.title}>{name}</h2>
             <h3>{tagline}</h3>
-            <p>{abv}</p>
+            <p>{abv}% ABV</p>
           </div>
           <div className={styles.infoColumn2}>
             <p>{description}</p>

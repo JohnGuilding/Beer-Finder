@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./CardBack.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CrudContext } from "./../../../context/crudContext";
 
 const CardBack = (props) => {
 
   const { handleClick } = props;
-
-  const [favState, setFavState] = useState(false);
 
   const { 
     name,
@@ -15,10 +14,16 @@ const CardBack = (props) => {
     food_pairing
   } = props.beer;
 
+  const [ favState, setFavState ] = useState(isFav);
+  const crudContext = useContext(CrudContext);
+  const { toggleFav } = crudContext;
+
   const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
   
+  //todo
   const handleFavClick = () => {
-    setFavState(!favState);
+    toggleFav(recipe)
+    setFavState(!isFav);
     alert('Favourites functionality will be live by 12th December 2020')
   }; 
 
