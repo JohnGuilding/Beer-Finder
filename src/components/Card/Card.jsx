@@ -42,11 +42,11 @@ export default Card;
 
 // CAN JSX // 
 
-{/* <div 
-    className={styles.can}
-    style={{backgroundColor: `#${randomColor}`}}>
-    <div className={styles.canTop}></div>
-    <div className={styles.canBottom}></div>
-</div> */}
+// <div 
+//     className={styles.can}
+//     style={{backgroundColor: `#${randomColor}`}}>
+//     <div className={styles.canTop}></div>
+//     <div className={styles.canBottom}></div>
+// </div> 
 
 // "brewers_tips": "While it may surprise you, this version of Punk IPA isn't dry hopped but still packs a punch! To make the best of the aroma hops make sure they are fully submerged and add them just before knock out for an intense hop hit."

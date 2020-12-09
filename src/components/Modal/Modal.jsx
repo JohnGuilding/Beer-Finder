@@ -23,9 +23,9 @@ const Modal = () => {
   }
   
 // todo
-{/* <div className={styles.left}>
-  <img src={beer.image_url ? beer.image_url : brewdoglogo}/> 
-</div> */}
+// <div className={styles.left}>
+//   <img src={beer.image_url ? beer.image_url : brewdoglogo}/> 
+// </div> 
 
   return (
     <section className={`${styles.modal} ${modalShow}`}>
@@ -37,7 +37,7 @@ const Modal = () => {
         <div className={styles.container}>
           <div className={styles.beerImg}>
             <div className={styles.circle}></div>
-            <img src={image_url} alt="A picture of beer"/>
+            <img src={image_url} alt="beer"/>
           </div>
           <div className={styles.infoColumn1}>
             <h2 className={styles.title}>{name}</h2>

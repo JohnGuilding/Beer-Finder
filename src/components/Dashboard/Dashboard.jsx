@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styles from "./Dashboard.module.scss";
 import Search from "./../Search";
 import Card from "./../Card";
