@@ -1,6 +1,4 @@
 %card {
-    /* here */
-    // transform-style: preserve-3d;*******************************
     height: 500px;
     width: 300px;
     border-radius: 30px;
@@ -9,7 +7,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border: 2px solid green;
 }
 
 $base-color: linear-gradient(to left, rgb(11, 216, 172), rgb(10, 77, 77));

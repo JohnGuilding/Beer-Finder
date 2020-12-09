@@ -3,9 +3,7 @@
     width: 300px; 
     transition: transform 1s;
     transform-style: preserve-3d;
-    // perspective: 600px;
     position: relative;
-    // z-index: 0;
     margin: 50px;
 
     &.faceDown {

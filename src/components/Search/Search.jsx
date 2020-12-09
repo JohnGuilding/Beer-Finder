@@ -5,7 +5,6 @@ import { ApiContext } from './../../context/apiContext';
 
 const Search = () => {
 
-  // const { modal, setModal } = props;
   const apiContext = useContext(ApiContext);
   const { fetchBeers, fetchRandomBeer, modal, setModal } = apiContext;
 

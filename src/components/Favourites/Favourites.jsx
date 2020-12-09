@@ -9,6 +9,7 @@ const Favourites = () => {
 
     useEffect(() => {
         getFavourites();
+        console.log(favourites);
     }, [])
 
     const showFavourites = favourites.length ? (

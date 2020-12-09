@@ -3,20 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
-  // border: 1px solid red;
 }
 
 body {
   width: 100%;
   font-family: "Poppins", sans-serif;
-  /* here - check that it doesn't mess up animation */
-  // perspective: 1000px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  // background-color: red;
 }
 
 .router {

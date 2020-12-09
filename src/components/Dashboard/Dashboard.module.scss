@@ -4,9 +4,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    // align-items: space;
     align-content: space-around;
-    // border: 4px dotted orange;
 }
 
 .modalBackground {
@@ -17,7 +15,6 @@ pointer-events: none;
 @media only screen and (max-width: 1630px) {
 
     .dashboard {
-        // grid-template-columns: repeat(2, 1fr);
         width: 100%;
     }
 }

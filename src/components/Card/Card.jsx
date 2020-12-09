@@ -40,21 +40,8 @@ const Card = (props) => {
 
 export default Card;
 
-{/* <article 
-    className={styles.card}
-    style={{backgroundColor: `#${randomColor}`}}>
-    <div className={styles.canTop}></div>
-    <div className={styles.canMiddle}> 
-        <img src={image_url} />
-        <h2>{name}</h2>
-        <h3>{tagline}</h3>
-        <p>{description}</p>
-        <h4>{abv} abv</h4>
-    </div>
-    <div className={styles.canBottom}></div>
-</article> */}
+// CAN JSX // 
 
-// can jsx
 {/* <div 
     className={styles.can}
     style={{backgroundColor: `#${randomColor}`}}>
