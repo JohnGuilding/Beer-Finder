@@ -19,13 +19,11 @@ const Favourites = () => {
             />
         ))
     ) : (
-        <h2>not working</h2>
+        <h2 className={styles.message}>No beverages in sight! Sign in to add beers to your favourites. </h2>
     )
 
-
     return (
-        <section>
-            <h1>Favourites functionality will be live by 12th December 2020</h1>
+        <section className={styles.favDashboard}>
                 {showFavourites}
         </section>
     )

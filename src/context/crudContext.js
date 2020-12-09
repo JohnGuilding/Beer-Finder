@@ -60,6 +60,11 @@ export const CrudProvider = (props) => {
         }
     }
 
+    // if beer is not favourite, add to Favourites
+    // if beer is favourite, remove from Favourites
+    // if beer is favourite, and adding same beer again, do nothing
+
+
     useEffect(() => {
         getFavourites();
     }, []);

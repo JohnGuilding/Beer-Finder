@@ -62,11 +62,4 @@ export default Card;
     <div className={styles.canBottom}></div>
 </div> */}
 
-
-// "food_pairing": [
-//     "Spicy carne asada with a pico de gallo sauce",
-//     "Shredded chicken tacos with a mango chilli lime salsa",
-//     "Cheesecake with a passion fruit swirl sauce"
-// ]
-
 // "brewers_tips": "While it may surprise you, this version of Punk IPA isn't dry hopped but still packs a punch! To make the best of the aroma hops make sure they are fully submerged and add them just before knock out for an intense hop hit."
