@@ -17,7 +17,7 @@ const CardBack = (props) => {
 
   const [ favState, setFavState ] = useState(isFav);
   const crudContext = useContext(CrudContext);
-  const { toggleFav, test } = crudContext;
+  const { toggleFav } = crudContext;
 
   const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
   
@@ -25,9 +25,7 @@ const CardBack = (props) => {
   const handleFavClick = () => {
     toggleFav(beer)
     setFavState(!isFav);
-    console.log(favState);
     // alert('Favourites functionality will be live by 12th December 2020')
-    test();
   }; 
 
   return (

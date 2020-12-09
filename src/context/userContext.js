@@ -10,7 +10,9 @@ export const UserProvider = (props) => {
         firebase.auth().signInWithRedirect(provider);
     };
     const signOut = () => {
-        firebase.auth().signOut();
+        firebase.auth().signOut().then(() => {
+            setUser(null);
+        });
     };
 
     const getUser = () => {

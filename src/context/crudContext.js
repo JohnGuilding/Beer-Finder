@@ -25,20 +25,7 @@ export const CrudProvider = (props) => {
         }
     };
 
-    const test = () => {
-        firestore   
-            .collection('favourites')
-            .doc()
-            .set(
-                {
-                    isTest: true
-                }
-            )
-            .then(() => {
-                console.log('working');
-            })
-            .catch((err) => console.log(err));
-    }
+    console.log(favourites);
 
     const addToFavourites = (beer) => {
         firestore
@@ -78,7 +65,7 @@ export const CrudProvider = (props) => {
     }, []);
 
     return (
-        <CrudContext.Provider value={{ test, favourites, toggleFav, addToFavourites }}>
+        <CrudContext.Provider value={{ favourites, toggleFav, addToFavourites, getFavourites }}>
             {props.children}
         </CrudContext.Provider>
     );
